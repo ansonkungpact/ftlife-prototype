@@ -1,180 +1,8 @@
-/***********
-	Project Vera Test Messenger
-	Custom styles
-	(c) 2016 Cathay Pacific Airways Ltd.
-***********/
-/********** TEST **********/
-/* * {
-  outline: red solid 1px;
-} */
-/********** IMPORT **********/
-/********** MIXINS **********/
-/** With references from https://web-design-weekly.com/2013/05/12/handy-sass-mixins/ **/
-/********** FONTS **********/
-@font-face {
-  font-family: 'Cathay Pacific';
-  src: url("../fonts/cathaypacific/CathayPacific_WCorp_Lt.eot");
-  src: url("../fonts/cathaypacific/CathayPacific_WCorp_Lt.eot?#iefix") format("embedded-opentype"), url("../fonts/cathaypacific/CathayPacific_WCorp_Lt.woff") format("woff"), url("../fonts/cathaypacific/CathayPacific_WCorp_Lt.ttf") format("truetype"), url("../fonts/cathaypacific/CathayPacific_Lt.svg#Cathay Pacific Light") format("svg");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Cathay Pacific';
-  src: url("../fonts/cathaypacific/CathayPacific_WCorp_Rg.eot");
-  src: url("../fonts/cathaypacific/CathayPacific_WCorp_Rg.eot?#iefix") format("embedded-opentype"), url("../fonts/cathaypacific/CathayPacific_WCorp_Rg.woff") format("woff"), url("../fonts/cathaypacific/CathayPacific_WCorp_Rg.ttf") format("truetype"), url("../fonts/cathaypacific/CathayPacific_Rg.svg#Cathay Pacific") format("svg");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Cathay Pacific';
-  src: url("../fonts/cathaypacific/CathayPacific_WCorp_Md.eot");
-  src: url("../fonts/cathaypacific/CathayPacific_WCorp_Md.eot?#iefix") format("embedded-opentype"), url("../fonts/cathaypacific/CathayPacific_WCorp_Md.woff") format("woff"), url("../fonts/cathaypacific/CathayPacific_WCorp_Md.ttf") format("truetype"), url("../fonts/cathaypacific/CathayPacific_Md.svg#Cathay Pacific Medium") format("svg");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Cathay Pacific';
-  src: url("../fonts/cathaypacific/CathayPacific_WCorp_Bd.eot");
-  src: url("../fonts/cathaypacific/CathayPacific_WCorp_Bd.eot?#iefix") format("embedded-opentype"), url("../fonts/cathaypacific/CathayPacific_WCorp_Bd.woff") format("woff"), url("../fonts/cathaypacific/CathayPacific_WCorp_Bd.ttf") format("truetype"), url("../fonts/cathaypacific/CathayPacific_Bd.svg#Cathay Pacific Bold") format("svg");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'CX Icons';
-  src: url("../fonts/cathaypacific/cx-icons.eot");
-  src: url("../fonts/cathaypacific/cx-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/cathaypacific/cx-icons.woff") format("woff"), url("../fonts/cathaypacific/cx-icons.ttf") format("truetype"), url("../fonts/cathaypacific/cx-icons.svg") format("svg");
-  font-weight: 400;
-  font-style: normal;
-}
-
-/********** COLOURS **********/
-/********** STRUCTURE **********/
-/* line 261, custom.scss */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  min-height: 100%;
-  font-size: 18px;
-  overflow: hidden;
-  color: #4c4c4c;
-  font-family: 'Cathay Pacific', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  padding: 20px 0px;
-}
-@media (max-width: 1023px) {
-  /* line 261, custom.scss */
-  body, html {
-    padding: 10px;
-  }
-}
-@media (max-width: 719px) {
-  /* line 261, custom.scss */
-  body, html {
-    padding: 0px;
-    font-size: 16px;
-  }
-}
-/* line 284, custom.scss */
-body:hover .container, html:hover .container {
-  opacity: 1;
-  -ms-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-/* line 292, custom.scss */
-body.bg-1, html.bg-1 {
-  background: url(../img/vera-bg-2.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-/* line 300, custom.scss */
-body.bg-2, html.bg-2 {
-  background: rgba(0, 0, 0, 0) linear-gradient(to top, #c6c2c1 -30px, #ffffff 100%) repeat scroll 0% 0%/auto padding-box border-box;
-}
-/* line 304, custom.scss */
-body.bg-3, html.bg-3 {
-  background: black linear-gradient(to top, rgba(0, 0, 0, 0.2) -30px, rgba(255, 255, 255, 0.4) 100%) repeat scroll 0% 0%/auto padding-box border-box;
-}
-
-/* line 309, custom.scss */
-.bg-layer {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-}
-
-/* line 316, custom.scss */
-.container {
-  width: 100%;
-  max-width: 1024px;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
-  margin: 0 auto 0 auto;
-  padding: 0;
-  opacity: 1;
-  position: relative;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
-  -webkit-box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3);
-  -webkit-transition: 0.25s;
-  -moz-transition: 0.25s;
-  -o-transition: 0.25s;
-  -ms-transition: 0.25s;
-  transition: 0.25s;
-  -moz-transform: scale(0.995);
-  -o-transform: scale(0.995);
-  -ms-transform: scale(0.995);
-  -webkit-transform: scale(0.995);
-  transform: scale(0.995);
-}
-/* line 330, custom.scss */
-.container .active {
-  opacity: 1;
-  -ms-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-@media (max-width: 1023px) {
-  /* line 316, custom.scss */
-  .container {
-    opacity: 1;
-    -moz-transform: scale(1);
-    -o-transform: scale(1);
-    -ms-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-/* line 343, custom.scss */
-.flexbox {
-  height: 100%;
-  width: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column;
-  -ms-flex-flow: column;
-  flex-flow: column;
-}
 
 /********** GENERAL TEXT STYLE **********/
 /* line 358, custom.scss */
 a {
-  color: #ef4123;
+  color: #f68b1f;
 }
 
 /* line 362, custom.scss */
@@ -426,7 +254,7 @@ ul.chat-list li.chat-bubble.user::before {
   position: absolute;
   top: 0;
   right: 0;
-  background: #ef4123;
+  background: #f68b1f;
   -webkit-border-bottom-right-radius: 10px;
   border-bottom-right-radius: 10px;
   -webkit-border-top-right-radius: 10px;
@@ -443,7 +271,7 @@ ul.chat-list li.chat-bubble.user::before {
 ul.chat-list li.chat-bubble.user:last-child .chat-bubble-tail {
   width: 10px;
   height: 10px;
-  background: #ef4123;
+  background: #f68b1f;
   position: absolute;
   bottom: -10px;
   right: -8px;
@@ -662,13 +490,12 @@ ul.chat-list .timestamp {
 /* line 794, custom.scss */
 .chat-footer-message-entry {
   height: auto;
-  margin: 30px 0px 10px 20px;
-  border: 0;
+      border: 0;
+    height: 30px;
 }
 @media (max-width: 719px) {
   /* line 794, custom.scss */
   .chat-footer-message-entry {
-    margin: 20px 0px 10px 10px;
     font-size: 1rem;
   }
 }
@@ -682,25 +509,27 @@ ul.chat-list .timestamp {
   resize: none;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   display: block;
+  margin-top: 10px;
+  margin-left: 10px;
+      max-height: 28px!important;
+    max-width: 220px!important;
 }
 
 /* line 815, custom.scss */
 .btn.chat-send {
   display: inline;
-  height: 80px;
+  height: 30px;
   width: 80px;
   margin: 10px 20px 0 0;
   padding: 0;
-  color: #ef4123;
+  color: #f68b1f;
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 500;
   text-align: center;
   float: right;
   background: none;
-  border: 2px solid #ef4123;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
+  border: 2px solid #f68b1f;
   background-clip: padding-box;
   /* stops bg color from leaking outside the border: */
   -webkit-transition: 0.25s;
@@ -739,7 +568,7 @@ ul.chat-list .timestamp {
   -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-  border: 4px solid #ef4123;
+  border: 4px solid #f68b1f;
 }
 @media (max-width: 1023px) {
   /* line 815, custom.scss */
@@ -755,7 +584,7 @@ ul.chat-list .timestamp {
     -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
     -moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
-    border: 2px solid #ef4123;
+    border: 2px solid #f68b1f;
   }
 }
 
@@ -809,6 +638,7 @@ ul.chat-list .timestamp {
   -webkit-border-bottom-left-radius: 20px;
   border-bottom-left-radius: 20px;
   background-clip: padding-box;
+  padding-bottom: 10px;
 }
 @media (max-width: 719px) {
   /* line 896, custom.scss */
@@ -838,6 +668,10 @@ ul.chat-list .timestamp {
 
 /* line 925, custom.scss */
 .chat-window {
+  z-index: -1;
+    position: relative;
+  max-height: 300px;
+  overflow: scroll;
   max-width: 1024px;
   width: 100%;
   height: 100%;
@@ -868,46 +702,10 @@ ul.chat-list .timestamp {
 .chat-header-mobile {
   display: none;
 }
-
-/* line 956, custom.scss */
 .chat-header {
-  width: 100%;
-  height: 43px;
-  background: #c6c2c1;
-  -webkit-border-top-right-radius: 20px;
-  border-top-right-radius: 20px;
-  -webkit-border-top-left-radius: 20px;
-  border-top-left-radius: 20px;
-  background-clip: padding-box;
-}
-@media (min-width: 1024px) {
-  /* line 956, custom.scss */
-  .chat-header {
-    height: 90px;
-  }
-}
-@media (max-width: 719px) {
-  /* line 956, custom.scss */
-  .chat-header {
-    -webkit-border-top-right-radius: 10px;
-    border-top-right-radius: 10px;
-    -webkit-border-top-left-radius: 10px;
-    border-top-left-radius: 10px;
-    background-clip: padding-box;
-  }
-}
-
-@media (min-width: 1024px) {
-  /* line 971, custom.scss */
-  .chat-header-container {
-    height: 90px;
-    width: 100%;
-    padding: 0 30px 0 30px;
-    max-width: 1024px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 100;
-  }
+  padding: 0 10px 15px 10px;
+  box-shadow: 1px 3px 5px #aab2bd;
+    height: 35px;
 }
 
 /* line 984, custom.scss */
@@ -921,14 +719,13 @@ ul.chat-list .timestamp {
 @media (min-width: 1024px) {
   /* line 984, custom.scss */
   .header_img_left {
-    width: 700px;
-    height: 154px;
+    width: 305px;
+    height: 90px;
     margin-top: 10px;
     background-size: 305px 90px;
     background: url("../img/icon/logo-cx-header-web@2x.png");
     background-repeat: no-repeat;
     float: left;
-    zoom: 0.5;
   }
 }
 
@@ -1151,7 +948,7 @@ table.baggage-calc-response-2 .values td {
 }
 /* line 1218, custom.scss */
 .modal.feedback .feedback-step-2 .icon-tick {
-  color: #ef4123;
+  color: #f68b1f;
   font-size: 3rem;
 }
 /* line 1224, custom.scss */
@@ -1327,21 +1124,21 @@ table.baggage-calc-response-2 .values td {
 }
 /* line 1348, custom.scss */
 .btn.btn-primary {
-  box-shadow: #ef4123 0px 1px 0px 0px;
+  box-shadow: #e8861f 0px 1px 0px 0px;
   color: white;
-  background: rgba(0, 0, 0, 0) linear-gradient(to top, #ef4123 0px, #ef4123 100%) repeat scroll 0% 0%/auto padding-box border-box;
+  background: rgba(0, 0, 0, 0) linear-gradient(to top, #e8861f 0px, #e8861f 100%) repeat scroll 0% 0%/auto padding-box border-box;
   border: 1px solid rgba(0, 0, 0, 0);
   outline: white none 0px;
 }
 /* line 1355, custom.scss */
 .btn.btn-primary:hover, .btn.btn-primary:focus {
-  background: rgba(0, 0, 0, 0) linear-gradient(to top, #ef4123 0px, #ef4123 100%) repeat scroll 0% 0%/auto padding-box border-box;
+  background: rgba(0, 0, 0, 0) linear-gradient(to top, #e8861f 0px, #e8861f 100%) repeat scroll 0% 0%/auto padding-box border-box;
 }
 /* line 1360, custom.scss */
 .btn.btn-secondary {
   background: white;
   border: 1px solid #c6c2c1;
-  color: #ef4123;
+  color: #f68b1f;
 }
 /* line 1365, custom.scss */
 .btn.btn-secondary:hover, .btn.btn-secondary:focus {
@@ -1489,4 +1286,143 @@ li.chat-bubble.vera.widget.faq .widget-feedback .btn-secondary {
   li.chat-bubble.vera.widget.faq .widget-feedback .btn-secondary {
     margin: 0 auto 5px auto;
   }
+}
+.chatbot {
+  background: #fff;
+      position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    right: 20px;
+    margin-bottom:0!important;
+    width: 330px;
+    padding: 0!important;
+    box-shadow: 0px 1px 8px #aab2bd!important;
+}
+.chatbot.chatbot-zoom {
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  max-width: 960px;
+  background: #fff;
+  margin-left: -14px;
+  height: 100%;
+}
+.chatbot.chatbot-zoom .chat-window {
+  padding-bottom: 125px;
+  margin-top: 6px;
+  max-height: 100%!important;
+}
+
+.chatbot.chatbot-zoom .chat-footer {
+  position: fixed;
+  bottom: 0;
+}
+@media (min-width: 719px) {
+  .chatbot.chatbot-zoom .chat-window {
+    height: 400px;
+        max-height: 400px!important;
+    padding-bottom: 0;
+  }
+  .chatbot.chatbot-zoom {
+    top: 150px;
+    height: auto;
+    margin-left: -30px;
+  }
+
+  .chatbot.chatbot-zoom .chat-footer {
+    position: relative;
+    bottom: 0;
+  }
+}
+@media (min-width: 991px) {
+  .chatbot.chatbot-zoom {
+    margin-left: 0;
+  }
+}
+.chatbot-focus {
+    border: 1px solid #f68b1f;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(246,139,31,0.66);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(246,139,31,0.66);
+    box-shadow: 0px 0px 15px 0px rgba(246,139,31,0.66);
+}
+
+
+.chatbot.chatbot-zoom .chat-footer {
+  margin: 0;
+}
+
+
+body.show-overlay {
+  overflow: hidden;
+}
+
+#black-overlay.show-overlay {
+  display: block;
+}
+
+#black-overlay {
+  display: none;
+  background: transparent;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+  zoom: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.chat-header-container {
+  float: left;
+}
+.full-screen {
+  float: right;
+  padding-top: 10px;
+}
+.full-screen {
+  cursor: pointer;
+}
+.full-screen .fa-times {
+  font-size: 16px;
+  display: none;
+}
+.full-screen a:hover, .full-screen a:focus, .full-screen a:active {
+  color: #f65e1b;
+}
+li.chat-bubble {
+  list-style: none;
+}
+
+.dynamic-content {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.dynamic-content.show-content {
+  display: block;
+}
+.contact-form.hidden {
+  display:none;
+}
+.loading {
+      margin-left: 100px;
+}
+.loading.hidden {
+  display: none;
+}
+.chat-header {
+  cursor: pointer;
+}
+.chat-header {
+ background: #f68b1f;
+    color: white;
+}
+.chatbot-collapse .chat-window {
+  display: none;
+}
+.chatbot-collapse .chat-footer {
+  display: none;
 }

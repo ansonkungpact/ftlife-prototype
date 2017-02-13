@@ -1,28 +1,22 @@
 {
-  "name": "baggage-assistant",
-  "version": "1.2.0",
-  "description": "Baggage Assistant",
+  "name": "node-js-getting-started",
+  "version": "0.2.5",
+  "description": "A sample Node.js app using Express 4",
+  "engines": {
+    "node": "5.9.1"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "cd modules && node createDb.js && node updateLuisModule.js",
-    "start": "node index.js",
-    "debug": "node index.js -d"
+    "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://edmondcx@bitbucket.org/innovationcentre/baggage-assistant.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/innovationcentre/baggage-assistant#readme",
   "dependencies": {
     "@slack/client": "^3.5.1",
     "body-parser": "^1.15.2",
     "cron": "^1.1.1",
     "csv": "^1.1.0",
-    "express": "^4.14.0",
+    "ejs": "2.4.1",
+    "express": "4.14.1",
     "express-waf": "^0.1.6",
-    "iconv": "^2.2.1",
     "jasmine": "^2.5.0",
     "jasmine-console-reporter": "^1.2.7",
     "jasmine-reporters": "^2.2.0",
@@ -37,9 +31,19 @@
     "request": "^2.72.0",
     "sequence": "^3.0.0",
     "sleep": "^3.0.1",
-    "socket.io": "^1.4.8",
+    "socket.io": "1.7.2",
     "underscore": "^1.8.3",
     "wordnet-db": "^3.1.2",
     "wordpos": "^1.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-getting-started"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
 }

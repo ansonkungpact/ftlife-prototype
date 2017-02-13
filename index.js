@@ -1,15 +1,42 @@
-var app = require('express')();
 var express = require('express');
+var app = express();
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
+// var io = require('socket.io')(http);
 var fs = require('fs');
 var moment = require('moment');
 
 var ExpressWaf = require('express-waf');
 var bodyParser = require('body-parser');
 
-var luisModule = require('./modules/luisModule.js');
-var calculatorModule = require('./modules/calculatorModule.js')();
+'use strict';
+
+const socketIO = require('socket.io');
+const path = require('path');
+
+const PORT = process.env.PORT || 3000;
+const INDEX = path.join(__dirname, '/public/clientchat/index-clientchat.html');
+const INDEXB = path.join(__dirname, '/public/app/login.html');
+
+const server = express()
+  .use(express.static('public/app/'))
+  .get('/', function(req, res){
+     res.sendFile(INDEXB);
+  })
+  .use(express.static('public'))
+  .get('/chatbot', function(req, res){
+     res.sendFile(INDEX);
+  })
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
+const io = socketIO(server);
+
+io.on('connection', (socket) => {
+  console.log('Client connected');
+  socket.on('disconnect', () => console.log('Client disconnected'));
+});
+
+setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
+
 var moduleName = 'INDEX';
 var isLog = false;
 var logHistory = {};
@@ -100,7 +127,7 @@ var setWaf = function() {
 var setChatBotApp = function() {
 	app.use(express.static('public'));
 
-	app.get('/', function(req, res){
+	app.get('/chatbot', function(req, res){
 	   res.sendFile(__dirname + '/public/clientchat/index-clientchat.html');
 	});
 
@@ -111,11 +138,11 @@ var setChatBotApp = function() {
 }
 
 var setFWDApp = function() {
-	// app.use(express.static('public/app/'));
+	app.use(express.static('public/app/'));
 
-	// app.get('/', function(req, res){
-	//    res.sendFile(__dirname + '/public/app/login.html');
-	// });
+	app.get('/', function(req, res){
+	   res.sendFile(__dirname + '/public/app/login.html');
+	});
 
 }
 
@@ -225,15 +252,14 @@ if (process.argv[2] == "-d") {
 	isDevelopmentMode = true;
 }
 
-
-setChatBotApp();
-setFWDApp();
+// setFWDApp();
+// setChatBotApp();
 
 setWaf();
 
 setSocketIo();
 
-http.listen(4000, function(){
-  console.log('listening on *:4000');
-});
+// http.listen(5000, function(){
+//   console.log('listening on *:4000');
+// });
 

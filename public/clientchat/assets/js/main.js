@@ -40,13 +40,13 @@ function init() {
 		platform = 'WEB';
 		$(".chat-header").removeClass('hidden');
 		$(".chat-header-mobile").addClass('hidden');
-		copyright_link = COPY_RIGHT+' </a>© FTLife Limited';
+		copyright_link = COPY_RIGHT+' </a>© FWD Limited';
 	}
 
 	//add copyright
-	$(".copyright").append('<div class="row"> '+
-                            '<div class="col-xs-12"> '+ copyright_link +
-                            '</div>');
+	// $(".copyright").append('<div class="row"> '+
+ //                            '<div class="col-xs-12"> '+ copyright_link +
+ //                            '</div>');
 
 	//textarea init - apply autosize plugin and add return key listener
 	autosize($('textarea'));
@@ -99,7 +99,7 @@ function init() {
 
 	//Initialise rating with accessibility fixes
 	$('.stars').raty({
-	  path       : 'clientchat/assets/img/icon/',
+	  path       : '../img/icon/',
 	  starOff    : 'icon-star-empty@2x.png',
 	  starOn     : 'icon-star@2x.png',
 	  hints: ["1 of 5 star", "2 of 5 stars", "3 of 5 stars", "4 of 5 stars", "5 of 5 stars"]
@@ -298,6 +298,7 @@ function makeChatBubble (chat_message, chat_message_timestamp, chat_window, user
 	 	var locationArray;
 	 	var content = '';
 	 	var showDoc = false;
+	 	var showHealth = false;
 
 	 	var veraGuessOd = false;
 
@@ -347,11 +348,14 @@ function makeChatBubble (chat_message, chat_message_timestamp, chat_window, user
 			}else if(entry == 'showDoc'){
 				console.log('comes here.............mikita:::: '+chat_message[entry]);
 				showDoc = true;
+			}else if(entry == 'showHealth'){
+				console.log('comes here.............mikita:::: '+chat_message[entry]);
+				showHealth = true;
 			}
 		}
 		
 		if(showDoc){
-			var bubble_content = '<li ' + chat_bubble_id + 'class="chat-bubble key-response ' + user + ' ' + custom_class + '" style="display: none;"> <span class="sr-only">' + sr_users[user] + ': </span>' + 
+			var bubble_content = '<h2>Doctor list</h2><li ' + chat_bubble_id + 'class="chat-bubble key-response ' + user + ' ' + custom_class + '" style="display: none;"> <span class="sr-only">' + sr_users[user] + ': </span>' + 
 
 				'<style>'+
 				'table {'+
@@ -406,21 +410,26 @@ function makeChatBubble (chat_message, chat_message_timestamp, chat_window, user
 				'<td>Endocrinology, Diabetes and Metabolism</td>'+
 				'<td>Shop No. 149, Hip Wo Street, Kwun Tong, Kowloon</td>'+
 				'</tr>'+
-				'</table>'+
+				'</table>';
+		}else if(showHealth){
+			var bubble_content = "<img src='assets/img/health.jpg' />";
 
-		
-			'<div class="timestamp"><time datetime="' + chat_message_timestamp + '">' + chat_message_timestamp +  '</div>' +
-			'<div class="chat-bubble-tail"></div></li>';
-		}else{
+		}
+		else{
 			var bubble_content = '<li ' + chat_bubble_id + 'class="chat-bubble ' + user + ' ' + custom_class + '" style="display: none;"> <span class="sr-only">' + sr_users[user] + ': </span>' + chat_message + '<div class="timestamp"><time datetime="' + chat_message_timestamp + '">' + chat_message_timestamp +  '</div><div class="chat-bubble-tail"></div></li>';
 		}
 		if (user == "vera") {
 			$('.vera-message-audio')[0].play();
 		}
 	 }
+if(showDoc || showHealth) {
+	$('.dynamic-content').html(bubble_content).find('.chat-bubble').fadeIn('slow');
 
+	$('.dynamic-content').addClass('show-content');
+} else {
 	$(".chat-block").last().append(bubble_content).find('.chat-bubble').fadeIn('slow');
 	$(chat_window).scrollTop($(chat_window)[0].scrollHeight);
+}
 }
 
 function feedbackHandler(target) {
@@ -652,3 +661,27 @@ function readMoreHandler(toggle_target) {
 		//SCROLL TO TOP
 	}
 }
+
+$('.full-screen .fa-times').on('click', function() {
+	$('body').removeClass('show-overlay');
+	$('#black-overlay').fadeOut();
+	$('.chatbot').removeClass('chatbot-zoom');
+	$('.full-screen .fa-times').hide();
+	$('.full-screen .fa-arrows-alt').show();
+});
+
+$('.full-screen .fa-arrows-alt').on('click', function() {
+	$('body').addClass('show-overlay');
+	$('#black-overlay').fadeIn();
+	$('.chatbot').addClass('chatbot-zoom');
+	$('.chatbot').hide();
+	$('.chatbot').fadeIn();
+	$('.full-screen .fa-times').show();
+	$('.full-screen .fa-arrows-alt').hide();
+});
+$('.chatbot textarea').on('focus', function() {
+ // $('.chatbot').addClass('chatbot-focus');
+});
+$('.chatbot textarea').on('focusout', function() {
+ // $('.chatbot').removeClass('chatbot-focus');
+});
