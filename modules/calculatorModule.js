@@ -93,7 +93,7 @@ const QUESTIONS = {
 		"Sure, I would be happy to help you. Here is the information on the relevant policy."
 	],
 	"HEALTH_POLICY_OPTION":[
-		"Please refer to this: <a> https://www.ftlife.com.hk/tc/products/find-my-insurance.html </a>"
+		"Please refer to this: <a href='https://www.ftlife.com.hk/tc/products/find-my-insurance.html' target='_blank'> https://www.ftlife.com.hk/tc/products/find-my-insurance.html </a>"
 	]
 
 };
