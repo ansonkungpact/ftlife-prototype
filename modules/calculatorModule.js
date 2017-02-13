@@ -93,7 +93,7 @@ const QUESTIONS = {
 		"Sure, I would be happy to help you. Here is the information on the relevant policy."
 	],
 	"HEALTH_POLICY_OPTION":[
-		"Please refer to this: <a> https://www.fwd.com.hk/en/protect/health-accident/medical/ </a>"
+		"Please refer to this: <a> https://www.ftlife.com.hk/tc/products/find-my-insurance.html </a>"
 	]
 
 };
@@ -359,7 +359,7 @@ var cCalculatorModule = function (){
 						extractsFromQuestion.QTAG2 == "physiotherapist" &&
 						extractsFromQuestion.PHYSIOTHERAPIST_COVERAGE == "yes"){
 						showQuestion("RELEVANT_POLICY");
-						showQuestion({"showHealth":true});
+						showQuestion("HEALTH_POLICY_OPTION");
 						// TODO ANSON
 						//showQuestion("HEALTH_POLICY_OPTION");
 						showQuestion("RESTART");
