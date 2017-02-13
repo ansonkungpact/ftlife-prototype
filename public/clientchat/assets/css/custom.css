@@ -912,11 +912,13 @@ ul.chat-list .timestamp {
 
 /* line 984, custom.scss */
 .header_img_left {
-  width: 22px;
-  height: 27px;
+    width: 103px;
+    height: 154px;
   margin: 7px auto 0 auto;
-  background-size: 22px 27px;
-  background-repeat: no-repeat;
+    background-size: 305px 90px;
+    background: url("../img/icon/logo-cx-header-web@2x.png");
+    background-repeat: no-repeat;
+    zoom: 0.25;
 }
 @media (min-width: 1024px) {
   /* line 984, custom.scss */
