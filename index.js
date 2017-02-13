@@ -18,12 +18,8 @@ const INDEX = path.join(__dirname, '/public/clientchat/index-clientchat.html');
 const INDEXB = path.join(__dirname, '/public/app/login.html');
 
 const server = express()
-  .use(express.static('public/app/'))
-  .get('/', function(req, res){
-     res.sendFile(INDEXB);
-  })
   .use(express.static('public'))
-  .get('/chatbot', function(req, res){
+  .get('/', function(req, res){
      res.sendFile(INDEX);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
