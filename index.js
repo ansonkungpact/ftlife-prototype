@@ -21,7 +21,7 @@ var bodyParser = require('body-parser');
 const socketIO = require('socket.io');
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const INDEX = path.join(__dirname, '/public/clientchat/index-clientchat.html');
 const INDEXB = path.join(__dirname, '/public/app/login.html');
 
